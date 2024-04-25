@@ -16,7 +16,7 @@ export class BaseService<T> {
     })
   }
 
-  constructor(private http: HttpClient) {
+  constructor(protected http: HttpClient) {
 
   }
 
@@ -55,7 +55,13 @@ export class BaseService<T> {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  private resourcePath(): string {
+  getById(id:number): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+
+  protected resourcePath(): string {
     return `${this.basePath}${this.resourceEndpoint}`;
   }
 }
