@@ -7,19 +7,33 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {HttpClientModule} from "@angular/common/http";
 import {AuthModule} from "./Auth/auth.module";
 
+import { CustomSidenavComponent } from './Public/components/custom-sidenav/custom-sidenav.component';
+import {MatListItem, MatNavList} from "@angular/material/list";
+import { LayoutComponent } from './Public/pages/layout/layout.component';
+import {MatSidenav, MatSidenavContainer, MatSidenavModule} from "@angular/material/sidenav";
+import {MatIcon} from "@angular/material/icon";
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomSidenavComponent,
+    LayoutComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AuthModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        AuthModule,
+        MatNavList,
+        MatListItem,
+        MatSidenavContainer,
+        MatSidenav,
+        MatIcon,
+        MatSidenavModule
 
 
-  ],
+    ],
   providers: [
     provideAnimationsAsync()
   ],
