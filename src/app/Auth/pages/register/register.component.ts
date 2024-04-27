@@ -19,24 +19,25 @@ export class RegisterComponent {
   registerForm:FormGroup = this.formBuilder.group({
     email: ['',{validators:[Validators.required,Validators.email],updateOn: `change`}],
     password: ['',{validators: [Validators.required,Validators.maxLength(8)],updateOn: `change`}],
-    name:['',{validators:[Validators.required]}],
-    lastName:['',{validators:[Validators.required]}],
+    name:[''],
+    lastName:[''],
     confirmPassword:['',{validators:[Validators.required]}],
     Company:['',{validators:[Validators.required]}],
     birthday:['',{validators:[Validators.required]}],
-    country:['',{validators:[Validators.required]}],
-    city:['',{validators:[Validators.required]}],
-    rol: [['',{validators:[Validators.required]}]],
+    country:[''],
+    city:[''],
+    rol: ['',{validators:[Validators.required]}]
   })
   onRegister():void{
     if(this.registerForm.invalid)return;
     this.user.email= this.registerForm.controls['email'].value
     this.user.password = this.registerForm.controls['password'].value
-    this.userService.create(this.user).subscribe(response =>{
-      this.router.navigate(["/auth/login"]);
 
-      }
 
-    )
+    this.userService.signUp(this.user)
+      .subscribe(response =>{
+        this.router.navigate(['auth/login'])
+      })
+
   }
 }

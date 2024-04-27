@@ -1,52 +1,62 @@
-<div>
+<div class = "container-register">
+  <h1>Sing Up</h1>
   <form [formGroup]="registerForm" (ngSubmit)="onRegister()" autocomplete="off" >
+    <div class="colum1">
 
-    <mat-form-field>
-      <mat-label>Name</mat-label>
-      <input type="text" matInput formControlName="name" >
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name" >
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Last Name</mat-label>
-      <input type="text" matInput formControlName="lastName" >
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput formControlName="lastName" >
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email" placeholder="email">
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="email">
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Password</mat-label>
-      <input type="password" matInput formControlName="password" placeholder="password">
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" placeholder="password">
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Confirm Password</mat-label>
-      <input type="password" matInput formControlName="confirmPassword" placeholder="confirmPassword">
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input type="password" matInput formControlName="confirmPassword" placeholder="confirmPassword">
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Name Company</mat-label>
-      <input type="text" matInput formControlName="lastName" >
-    </mat-form-field>
+    </div>
+    <div class="colum2">
+      <mat-form-field>
+        <mat-label>Name Company</mat-label>
+        <input type="text" matInput formControlName="lastName" >
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Rol</mat-label>
-      <input type="text" matInput formControlName="rol" >
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Rol</mat-label>
+        <input type="text" matInput formControlName="rol" >
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Country</mat-label>
-      <input type="text" matInput formControlName="country" >
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input type="text" matInput formControlName="country" >
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>City</mat-label>
-      <input type="text" matInput formControlName="city" >
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input type="text" matInput formControlName="city" >
+      </mat-form-field>
 
-    <button mat-button mat-flat-button type="submit"><h3>Sing Up</h3></button>
+      <button mat-button mat-flat-button type="submit"><h3>Sing Up</h3></button>
+
+    </div>
+
+
+
+
 
   </form>
 </div>
