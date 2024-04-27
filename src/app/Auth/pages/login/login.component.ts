@@ -29,14 +29,14 @@ export class LoginComponent{
   onLogin():void {
     if(this.LoginForm.invalid)return;
     //hacer un post para el desploy con backend
-    this.userService.login(this.LoginForm.controls['email'].value, this.LoginForm.controls['password'].value)
+    this.userService.login(
+      this.LoginForm.controls['email'].value,
+      this.LoginForm.controls['password'].value)
+
       .subscribe(response =>{
         console.log("Inicio correcto");
-        console.log(localStorage.getItem('idProfile'));
-        this.userService.printData();
-        this.router.navigate(['signUp']);
-
-
+        /*this.userService.printData();*/
+        this.router.navigate(['home']);
 
       })
 

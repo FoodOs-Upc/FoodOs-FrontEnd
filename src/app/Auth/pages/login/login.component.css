@@ -1,0 +1,54 @@
+.content-login{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+
+}
+.content-form-login{
+  background-color: #66A18A;
+  border-radius: 1.778vh;
+  width: 60vh;
+  height: 70vh;
+
+
+
+
+  >div{
+    padding: 30px;
+    >h1{
+      color: #EBB755;
+    }
+
+
+  }
+  >form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+
+
+    > button {
+      width: 100px; /* Ancho del botón */
+      height: 40px; /* Alto del botón */
+
+      background-color: #EBB755;
+
+
+
+    }
+
+  }
+  .route-register{
+    display: flex;
+
+
+    align-content: center;
+    justify-content: center;
+    >p{
+      margin-top: 10vh;
+    }
+  }
+}
