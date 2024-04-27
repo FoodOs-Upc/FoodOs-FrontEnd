@@ -6,6 +6,7 @@ import {catchError, map, Observable, of, retry, switchMapTo, tap} from "rxjs";
 import {ProfileService} from "../../Profile/service/profile.service";
 import {toNumbers} from "@angular/compiler-cli/src/version_helpers";
 import {Profile} from "../../Profile/model/profile.entity";
+import {resolve} from "@angular/compiler-cli";
 
 @Injectable({
   providedIn: 'root'
@@ -22,23 +23,34 @@ export class UserService extends BaseService<User>{
     this.userProfile ={} as Profile
     this.resourceEndpoint = '/user'
   }
+  //Cambiar el la posicion del arreglo para cambiar de tipo de usuario
   login(email:string, password:string):Observable<boolean>{
-    return this.http.get<User>(`${this.resourcePath()}`)
+    return this.http.get<User[]>(`${this.resourcePath()}`)
       .pipe(
-        tap(response => this.userLogin = response),
-        tap(response => localStorage.setItem('idProfile',String(response.id_user))),
+        tap(response => this.userLogin = response[0]),
+        tap(response => localStorage.setItem('token',response[0].id_user)),
+        tap(response => console.log(this.userLogin)),
         map(() =>true)
         )
 
   }
 
+  signUp(user:User):Observable<User>{
+    return this.http.post<User>(`${this.resourcePath()}`,user)
+      .pipe(
+        tap(response=>this.userLogin = response),
+
+      )
+  }
+
 
   checkStatus():Observable<boolean>{
-    if (!localStorage.getItem('idProfile'))return of(false);
-    const token:number =parseInt(localStorage.getItem('idProfile')?? '',10)  ;
-    return this.profileService.getById(token)
+    if (!localStorage.getItem('token'))return of(false);
+    const token:string = localStorage.getItem('token')?? ''  ;
+    return this.profileService.getById(Number(token))
       .pipe(
         tap(response =>this.userProfile=response ),
+        tap(response => console.log(this.userProfile)),
         map(userProfile => !!userProfile),
         catchError(err=>of(false))
       )
@@ -51,8 +63,13 @@ export class UserService extends BaseService<User>{
   }
 
   public printData():void{
-    console.log(this.userLogin.id_user)
+    console.log(this.userLogin)
     console.log("//////////////////////")
-    console.log(this.userProfile.id);
+    console.log(this.userProfile);
+  }
+
+  public currentProfile():Profile{
+    return this.userProfile;
+
   }
 }
