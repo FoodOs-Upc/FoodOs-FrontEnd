@@ -32,10 +32,13 @@ export class TeamComponent implements OnInit {
   }
   deleteMember(id: any): void {
     this.teamService.delete(id).subscribe(() => {
-      // Actualizar la lista de miembros después de eliminar
       this.getTeamData();
     });
   }
+
+
+  //Delete ejemplo
+  /*
   private deletemember(id: number) {
     this.teamService.delete(id).subscribe(() => {
       this.teamMembers = this.teamMembers.filter(member => member.id !== id);
@@ -45,5 +48,6 @@ export class TeamComponent implements OnInit {
   onDeleteItem(member: TeamEntity): void {
     this.deletemember(member.id);
   }
+*/
 
 }
