@@ -80,13 +80,11 @@
       "time_task": "Mañana"
     },
     {
-      "id": 3,
       "full_name": "Max Arroyo",
-      "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
-      "description": "Soy pro-activo :D",
-      "rol": "trabajador",
-      "task": "Actualizar inventario",
-      "time_task": "Mañana"
+      "photo": "https://i.postimg.cc/mrNJ69Ls/Max-perfil.jpg",
+      "description": "Funcional pro",
+      "rol": "Trabajador",
+      "id": 3
     }
   ]
 }
