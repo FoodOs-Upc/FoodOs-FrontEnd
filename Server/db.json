@@ -19,9 +19,9 @@
       "id_user": "2"
     }
   ],
-
   "profile": [
-    { "id": 0,
+    {
+      "id": 0,
       "name": "Brayan",
       "lastName": "Morales Quispe",
       "addresCity": "Lima",
@@ -30,7 +30,8 @@
       "rol": "ROLE_RESTAURANT",
       "membership": "PLAN_1"
     },
-    { "id": 1,
+    {
+      "id": 1,
       "name": "Alex",
       "lastName": "Nuñez Chipa",
       "addresCity": "Lima",
@@ -39,7 +40,8 @@
       "rol": "ROLE_RESTAURANT",
       "membership": "PLAN_1"
     },
-    { "id": 2,
+    {
+      "id": 2,
       "name": "Alessandro",
       "lastName": "Vega",
       "addresCity": "Surquillo",
@@ -54,7 +56,6 @@
       "id": 0,
       "full_name": "Max Arroyo",
       "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
-      "description": "Spy proactivo :D",
       "rol": "trabajador",
       "task": "Actualizar inventario",
       "time_task": "Mañana"

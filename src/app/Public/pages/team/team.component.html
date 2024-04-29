@@ -1,5 +1,5 @@
 <div class="container">
-  <p class="team-text">team works!</p>
+  <p class="team-text">Este es tu equipo!</p>
   <div *ngFor="let member of teamMembers" class="member-card">
     <mat-card class="example-card">
       <mat-card-header class="card-header">
@@ -14,7 +14,9 @@
       </mat-card-content>
       <mat-card-actions>
         <button mat-button class="button-like">LIKE</button>
-        <button mat-button class="button-share">SHARE</button>
+        <a (click)="onDeleteItem(member)" href="javascript:void(0)">
+          <mat-icon>delete</mat-icon>
+        </a>
       </mat-card-actions>
     </mat-card>
   </div>

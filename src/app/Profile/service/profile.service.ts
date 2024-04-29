@@ -9,7 +9,6 @@ import {catchError, Observable, retry} from "rxjs";
 })
 export class ProfileService extends BaseService<Profile>{
 
-
   constructor(http: HttpClient) {
     super(http);
     this.resourceEndpoint = '/profile'

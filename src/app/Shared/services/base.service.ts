@@ -40,7 +40,7 @@ export class BaseService<T> {
 
   // Delete Resource
   delete(id: any) {
-    return this.http.delete(`${this.resourcePath()}/${id}`, this.httpOptions)
+    return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
@@ -51,6 +51,8 @@ export class BaseService<T> {
   }
 
   // Get All Resources
+
+
   getAll(): Observable<T> {
     return this.http.get<T>(this.basePath, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
@@ -64,7 +66,6 @@ export class BaseService<T> {
         retry(2),
         catchError(this.handleError));
   }
-
 
   protected resourcePath(): string {
     return `${this.basePath}${this.resourceEndpoint}`;
