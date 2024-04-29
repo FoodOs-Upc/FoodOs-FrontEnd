@@ -60,6 +60,33 @@
       "rol": "trabajador",
       "task": "Actualizar inventario",
       "time_task": "Mañana"
+    },
+    {
+      "id": 1,
+      "full_name": "Max Arroyo",
+      "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
+      "description": "Soy pro-activo :D",
+      "rol": "trabajador",
+      "task": "Actualizar inventario",
+      "time_task": "Mañana"
+    },
+    {
+      "id": 2,
+      "full_name": "Max Arroyo",
+      "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
+      "description": "Soy pro-activo :D",
+      "rol": "trabajador",
+      "task": "Actualizar inventario",
+      "time_task": "Mañana"
+    },
+    {
+      "id": 3,
+      "full_name": "Max Arroyo",
+      "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
+      "description": "Soy pro-activo :D",
+      "rol": "trabajador",
+      "task": "Actualizar inventario",
+      "time_task": "Mañana"
     }
   ]
 }

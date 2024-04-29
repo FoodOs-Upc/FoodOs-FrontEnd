@@ -5,12 +5,13 @@ import {TeamService} from "./service/team.service";
 import {MatButtonModule} from "@angular/material/button";
 import {CommonModule} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
+import {MatFormField} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrl: './team.component.css',
-  imports: [MatCardModule, MatButtonModule, CommonModule, MatIcon],
+  imports: [MatCardModule, MatButtonModule, CommonModule, MatIcon, MatFormField],
   standalone: true
 })
 export class TeamComponent implements OnInit {

@@ -4,17 +4,33 @@
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  background-color: #66A18A;
+  width: 80%;
+  margin: 0 auto; /* Centra horizontalmente */
+  margin-top: 50px;
+  padding-top: 10px;
 }
 
 .card-container {
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: auto;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-rows: repeat(auto-fill,minmax(200px,1fr));
+  gap: 10px;
+  flex-direction: row;
+  justify-content: left;
   align-items: center;
+  height: 50vh;
+  width: 95%;
+  margin-top: -50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: -10px;
 }
 
 .member-card img {
@@ -25,8 +41,16 @@
 
 }
 .team-text {
-  font-size: 24px; /* Tamaño del texto del mensaje 'team works!' */
+
+  font-size: 24px; /* Tamaño del texto del mensaje 'Este es tu equipo!' */
+  justify-content: left; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 50%; /* Ajusta el alto para centrar verticalmente */
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-bottom: -50px; /* Ajusta el margen inferior */
 }
+
 
 .card-title {
   font-size: 16px; /* Tamaño del texto del título del miembro */
@@ -41,4 +65,10 @@
 .button-like,
 .button-share {
   font-size: 10px; /* Tamaño del texto de los botones */
+}
+.add-member-button{
+  background-color: #EBB755;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
