@@ -7,27 +7,28 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class BaseService<T> {
-  basePath: string = `${environment.serverBasePath}`;
+  basePath = ' http://localhost:3000/api/v1/';
   resourceEndpoint: string = '/resources';
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-type': 'application/json',
+      'Content-Type': 'application/json',
     })
-  }
+  };
 
   constructor(protected http: HttpClient) {
 
   }
 
   handleError(error: HttpErrorResponse) {
-    // Default error handling
     if (error.error instanceof ErrorEvent) {
-      console.log(`An error occurred ${error.error.message}`);
+      // Default error handling
+      console.log(`An error occurred: ${error.error.message}`);
     } else {
       // Unsuccessful Response Error Code returned from Backend
-      console.log(`Backend returned code ${error.status}, body was ${error.error}`);
+      console.error(`Backend returned code ${error.status}, body was: ${error.error}`);
     }
+    // Return Observable with Error Message to Client
     return throwError(() => new Error('Something happened with request, please try again later'));
   }
 
@@ -51,13 +52,17 @@ export class BaseService<T> {
 
   // Get All Resources
   getAll(): Observable<T> {
-    return this.http.get<T>(this.resourcePath(), this.httpOptions)
+    return this.http.get<T>(this.basePath, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  getById(id:number): Observable<T> {
-    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
+  getById(id: any): Observable<T> {
+    return this.http.get<T>(
+      `${this.basePath}/${id}`,
+      this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
   }
 
 
