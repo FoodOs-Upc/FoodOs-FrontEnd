@@ -1,0 +1,36 @@
+.container-register{
+  padding-left: 10vh;
+  padding-top: 5vh;
+  >h1{
+    color: #EBB755;
+  }
+  >form {
+    padding-top: 3vh;
+    display: flex;
+
+
+
+  }
+  .colum1{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10vh;
+  }
+  .colum2{
+    display: flex;
+    flex-direction: column;
+
+    > button {
+      width: 100px; /* Ancho del botón */
+      height: 40px; /* Alto del botón */
+
+      background-color: #EBB755;
+
+    }
+  }
+  mat-form-field{
+
+    border-radius: 8px;
+  }
+
+}
