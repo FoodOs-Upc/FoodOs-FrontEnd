@@ -11,7 +11,8 @@ import { SuppliersEditComponent } from './suppliers-edit/suppliers-edit.componen
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input";
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from "@angular/material/core";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,9 @@ import {MatInputModule} from "@angular/material/input";
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     provideAnimationsAsync()
