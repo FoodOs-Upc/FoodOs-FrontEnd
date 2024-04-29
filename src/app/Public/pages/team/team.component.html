@@ -1,27 +1,20 @@
 <div class="container">
-  <p>team works!</p>
-  <!-- Iterar sobre cada miembro del equipo -->
+  <p class="team-text">team works!</p>
   <div *ngFor="let member of teamMembers" class="member-card">
     <mat-card class="example-card">
-      <mat-card-header>
-        <!-- Usar la foto del miembro del equipo como avatar -->
-        <div mat-card-avatar class="example-header-image">
-          <img [src]="member.photo" alt="Avatar">
-        </div>
-        <!-- Mostrar el nombre completo del miembro del equipo -->
-        <mat-card-title>{{ member.full_name }}</mat-card-title>
-        <!-- Mostrar el rol del miembro del equipo -->
-        <mat-card-subtitle>{{ member.rol }}</mat-card-subtitle>
+      <mat-card-header class="card-header">
+        <mat-card-title-group>
+          <mat-card-title class="card-title">{{ member.full_name }}</mat-card-title>
+          <mat-card-subtitle class="card-subtitle">{{ member.rol }}</mat-card-subtitle>
+          <img mat-card-sm-image [src]="member.photo" >
+        </mat-card-title-group>
       </mat-card-header>
-      <!-- Mostrar la tarea y el tiempo de la tarea del miembro del equipo -->
-      <mat-card-content>
-        <p>{{ member.task }}</p>
-        <p>{{ member.time_task }}</p>
+      <mat-card-content class="card-content">
+        {{ member.task }}
       </mat-card-content>
-      <!-- Opciones adicionales (LIKE, SHARE) -->
       <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <button mat-button class="button-like">LIKE</button>
+        <button mat-button class="button-share">SHARE</button>
       </mat-card-actions>
     </mat-card>
   </div>

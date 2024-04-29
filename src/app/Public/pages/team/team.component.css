@@ -1,5 +1,6 @@
 .example-card {
   max-width: 400px;
+  width: 250px;
 }
 
 .container {
@@ -7,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ajusta la altura según sea necesario */
+  height: 50vh;
 }
 
 .card-container {
@@ -16,3 +17,28 @@
   align-items: center;
 }
 
+.member-card img {
+
+  max-width: 50%; /* La imagen se ajustará al ancho máximo del recuadro */
+  max-height: 100%; /* La imagen se ajustará al alto máximo del recuadro */
+  object-fit: contain; /* La imagen se ajustará sin distorsionar, cubriendo todo el área disponible */
+
+}
+.team-text {
+  font-size: 24px; /* Tamaño del texto del mensaje 'team works!' */
+}
+
+.card-title {
+  font-size: 16px; /* Tamaño del texto del título del miembro */
+}
+
+.card-subtitle {
+  font-size: 12px; /* Tamaño del texto del rol del miembro */
+}
+.card-content {
+  font-size: 12px; /* Tamaño del texto del contenido del card */
+}
+.button-like,
+.button-share {
+  font-size: 10px; /* Tamaño del texto de los botones */
+}
