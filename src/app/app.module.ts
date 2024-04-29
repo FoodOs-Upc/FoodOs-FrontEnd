@@ -19,6 +19,12 @@ import {MatLine} from "@angular/material/core";
 import {ProductTableComponent} from "./FoodOS/Inventory/components/product-table/product-table.component";
 import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {NgOptimizedImage} from "@angular/common";
+import {MatSort} from "@angular/material/sort";
+import {MatPaginator} from "@angular/material/paginator";
+import { TeamComponent} from "./FoodOS/Team/components/pages/team.component";
+
 import {
   MatCell,
   MatCellDef,
@@ -28,10 +34,6 @@ import {
   MatHeaderRowDef,
   MatTable
 } from "@angular/material/table";
-import {MatButton, MatIconButton} from "@angular/material/button";
-import {NgOptimizedImage} from "@angular/common";
-import {MatSort} from "@angular/material/sort";
-import {MatPaginator} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -40,7 +42,7 @@ import {MatPaginator} from "@angular/material/paginator";
     CustomSidenavComponent,
     LayoutComponent,
     InventoryPageComponent,
-    ProductTableComponent
+    ProductTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,8 @@ import {MatPaginator} from "@angular/material/paginator";
     MatButton,
     MatHeaderRowDef,
     MatHeaderRow,
-    MatPaginator
+    MatPaginator,
+    TeamComponent
 
   ],
   providers: [
