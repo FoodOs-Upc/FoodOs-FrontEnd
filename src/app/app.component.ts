@@ -11,9 +11,8 @@ export class AppComponent implements OnInit{
   constructor(private userService:UserService) {
   }
   ngOnInit(){
-    this.userService.checkStatus()
-      .subscribe(()=>{
-        console.log("Chequeando Usuario")
-      })
+    this.userService.checkStatus().subscribe(()=>{
+      console.log("Chequeando Usuario")
+    })
   }
 }

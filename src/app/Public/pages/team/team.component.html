@@ -1,0 +1,124 @@
+<div class="container">
+  <p class="team-text">Este es tu equipo!</p>
+  <div class="card-containerMember">
+    <div *ngFor="let member of teamMembers" class="member-card">
+      <mat-card class="example-card">
+        <mat-card-header class="card-header">
+          <mat-card-title-group>
+            <mat-card-title class="card-title">{{ member.full_name }}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle">Rol: {{ member.rol }}</mat-card-subtitle>
+            <img mat-card-sm-image [src]="member.photo" alt="Image">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+          {{ member.description }}
+        </mat-card-content>
+        <mat-card-actions class="actions-container">
+          <div class="right-actions">
+            <a (click)="edit(member)" href="javascript:void(0)">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a (click)="deleteMember(member.id)" href="javascript:void(0)">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </div>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="containerForm">
+  <h2>{{ editMode ? 'Edit Member' : 'Add Member' }}</h2>
+  <div class="form-section">
+    <form (submit)="onSubmit()" class="form-row">
+      <mat-form-field>
+        <input matInput placeholder="Name" name="name" [(ngModel)]="member.full_name">
+      </mat-form-field>
+      <mat-form-field id="age-form-field">
+        <input matInput placeholder="Photo" name="photo" [(ngModel)]="member.photo">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description" name="description" [(ngModel)]="member.description">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Rol" name="role" [(ngModel)]="member.rol">
+      </mat-form-field>
+      <ng-container *ngIf="editMode; else elseTemplate">
+        <button mat-raised-button color="primary">Update</button>
+        <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <button mat-button class="add-member-button">Añadir integrante</button>
+      </ng-template>
+    </form>
+  </div>
+</div>
+
+<div class="containerTask">
+  <p class="team-text">Estas son tus Tareas </p>
+  <div class="card-containerTask">
+    <div *ngFor="let taska of task" class="member-card">
+      <mat-card class="example-card">
+        <mat-card-header class="card-header">
+          <mat-card-title-group>
+            <mat-card-title class="card-title">{{ taska.title }}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle"> Personal: {{ taska.memberAsignado }}</mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+          Descripción: {{ taska.description }}
+          <br>
+          Fecha: {{ datePipe.transform(taska.date, 'dd/MM/yyyy') }}
+        </mat-card-content>
+        <mat-card-actions class="actions-container">
+          <div class="right-actions">
+            <a (click)="editTask(taska)" href="javascript:void(0)">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a (click)="deleteTask(taska.id)" href="javascript:void(0)">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="containerFormTask">
+  <h2>{{ editMode ? 'Edit Task' : 'Add Task' }}</h2>
+  <div class="form-section">
+
+    <form (submit)="onSubmitTask()" class="form-row">
+
+      <mat-form-field>
+        <input matInput placeholder="Title" name="title" [(ngModel)]="taska.title">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Descripcion" name="description" [(ngModel)]="taska.description">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Designado" name="designado" [(ngModel)]="taska.memberAsignado">
+      </mat-form-field>
+
+      <mat-form-field subscriptSizing="dynamic">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]= "picker" name="fecha" [(ngModel)]="taska.date">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <ng-container *ngIf="editMode2; else elseTemplate2">
+        <button mat-raised-button color="primary">Update</button>
+        <button mat-raised-button color="warn" (click)="onCancelTask()">Cancel</button>
+      </ng-container>
+      <ng-template #elseTemplate2>
+        <button mat-button class="add-task-button">Añadir Tarea</button>
+      </ng-template>
+    </form>
+  </div>
+</div>
