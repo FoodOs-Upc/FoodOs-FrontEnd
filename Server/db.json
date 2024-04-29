@@ -57,33 +57,57 @@
       "full_name": "Max Arroyo",
       "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
       "description": "Soy pro-activo :D",
-      "rol": "trabajador",
-      "task": "Actualizar inventario",
-      "time_task": "Mañana"
+      "rol": "trabajador"
     },
     {
       "id": 1,
       "full_name": "Max Arroyo",
       "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
       "description": "Soy pro-activo :D",
-      "rol": "trabajador",
-      "task": "Actualizar inventario",
-      "time_task": "Mañana"
+      "rol": "trabajador"
     },
     {
       "id": 2,
       "full_name": "Max Arroyo",
       "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
       "description": "Soy pro-activo :D",
-      "rol": "trabajador",
-      "task": "Actualizar inventario",
-      "time_task": "Mañana"
+      "rol": "trabajador"
     },
     {
       "full_name": "Max Arroyo",
       "photo": "https://i.postimg.cc/mrNJ69Ls/Max-perfil.jpg",
       "description": "Funcional pro",
       "rol": "Trabajador",
+      "id": 3
+    }
+  ],
+  "task": [
+    {
+      "id": 0,
+      "title": "Crear",
+      "description": "as",
+      "date": "2024-04-17T05:00:00.000Z",
+      "memberAsignado": "Alessandro Vega"
+    },
+    {
+      "id": 1,
+      "title": "Editar",
+      "description": "as",
+      "date": "2024-04-17T05:00:00.000Z",
+      "memberAsignado": "Alessandro Vega"
+    },
+    {
+      "title": "Eliminar",
+      "description": "Eliminar",
+      "memberAsignado": "Nicolas Haro",
+      "date": "2024-04-17T05:00:00.000Z",
+      "id": 2
+    },
+    {
+      "date": "2024-04-08T05:00:00.000Z",
+      "memberAsignado": "Nicolas Haro",
+      "description": "Elimianr",
+      "title": "Eliminar",
       "id": 3
     }
   ]

@@ -3,6 +3,15 @@
   width: 250px;
 }
 
+.containerTask{
+  justify-content: center;
+  align-items: center;
+  background-color: #66A18A;
+  width: 80%;
+  margin: 0 auto; /* Centra horizontalmente */
+  margin-top: 50px;
+  padding-top: 10px;
+}
 .container {
 
   justify-content: center;
@@ -12,17 +21,9 @@
   margin: 0 auto; /* Centra horizontalmente */
   margin-top: 50px;
   padding-top: 10px;
-}
-
-.containerForm{
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto; /* Centra horizontalmente */
-  margin-top: 50px;
-  padding-top: 10px;
 
 }
+
 .card-container {
   display: flex;
   flex-wrap: nowrap;
@@ -41,6 +42,26 @@
   margin-right: 20px;
   margin-bottom: -10px;
 }
+
+.containerForm{
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto; /* Centra horizontalmente */
+  margin-top: 50px;
+  padding-top: 10px;
+
+}
+.containerFormTask{
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto; /* Centra horizontalmente */
+  margin-top: 50px;
+  padding-top: 10px;
+
+}
+
 
 .member-card img {
 
@@ -76,6 +97,13 @@
   font-size: 10px; /* Tamaño del texto de los botones */
 }
 .add-member-button{
+  background-color: #EBB755;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.add-task-button{
   background-color: #EBB755;
   margin-top: 20px;
   margin-left: 20px;

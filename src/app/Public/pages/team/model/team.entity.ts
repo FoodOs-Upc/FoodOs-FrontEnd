@@ -4,8 +4,5 @@ export interface TeamEntity {
   photo: string;
   description: string;
   rol: string;
-  task: string;
-  time_task: string;
-
 
 }

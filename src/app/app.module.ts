@@ -13,7 +13,9 @@ import { LayoutComponent } from './Public/pages/layout/layout.component';
 import {MatSidenav, MatSidenavContainer, MatSidenavModule} from "@angular/material/sidenav";
 import {MatIcon} from "@angular/material/icon";
 import {TeamComponent} from "./Public/pages/team/team.component";
-import {CommonModule} from "@angular/common";
+import {CommonModule, DatePipe} from "@angular/common";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -34,12 +36,15 @@ import {CommonModule} from "@angular/common";
     MatIcon,
     MatSidenavModule,
     CommonModule,
-    TeamComponent
+    TeamComponent,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
 
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
