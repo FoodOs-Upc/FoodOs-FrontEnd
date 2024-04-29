@@ -2,10 +2,7 @@
   max-width: 400px;
   width: 250px;
 }
-
-
 .container {
-
   justify-content: center;
   align-items: center;
   background-color: #66A18A;
@@ -16,7 +13,7 @@
   margin-right: 20px;
   margin-top: 50px;
   padding-top: 10px;
-
+  border-radius: 20px;
 }
 .containerForm{
   justify-content: center;
@@ -41,6 +38,7 @@
   margin-right: 20px;
   margin-top: 10px;
   padding-top: 10px;
+  border-radius: 20px;
 }
 
 .containerFormTask{
@@ -60,11 +58,11 @@
   overflow-x: auto;
   overflow-y: auto;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-template-rows: repeat(auto-fill,minmax(200px,1fr));
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
   flex-direction: row;
   justify-content: left;
-  height: auto ;
+  height: auto;
   width: 95%;
   margin-top: 20px;
   margin-left: 20px;
@@ -91,18 +89,12 @@
   padding-bottom: 20px;
 }
 
-
-
-
 .member-card img {
-
   max-width: 50%; /* La imagen se ajustará al ancho máximo del recuadro */
   max-height: 100%; /* La imagen se ajustará al alto máximo del recuadro */
   object-fit: contain; /* La imagen se ajustará sin distorsionar, cubriendo todo el área disponible */
-
 }
 .team-text {
-
   font-size: 24px; /* Tamaño del texto del mensaje 'Este es tu equipo!' */
   justify-content: left; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
@@ -111,12 +103,9 @@
   margin-left: 20px;
   margin-bottom: -50px; /* Ajusta el margen inferior */
 }
-
-
 .card-title {
   font-size: 16px; /* Tamaño del texto del título del miembro */
 }
-
 .card-subtitle {
   font-size: 12px; /* Tamaño del texto del rol del miembro */
 }
@@ -161,4 +150,14 @@
 .form-row #age-form-field {
   margin-right: 8px;
   width: 15%;
+}
+.actions-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

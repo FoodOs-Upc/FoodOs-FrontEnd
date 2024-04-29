@@ -13,11 +13,16 @@
         <mat-card-content class="card-content">
           {{ member.description }}
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button class="button-like" (click)="edit(member)">Edit</button>
-          <a (click)="deleteMember(member.id)" href="javascript:void(0)">
-            <mat-icon>delete</mat-icon>
-          </a>
+        <mat-card-actions class="actions-container">
+          <div class="right-actions">
+            <a (click)="edit(member)" href="javascript:void(0)">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a (click)="deleteMember(member.id)" href="javascript:void(0)">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </div>
+
         </mat-card-actions>
       </mat-card>
     </div>
@@ -67,11 +72,15 @@
           <br>
           Fecha: {{ datePipe.transform(taska.date, 'dd/MM/yyyy') }}
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button class="button-like" (click)="editTask(taska)">Edit</button>
-          <a (click)="deleteTask(taska.id)" href="javascript:void(0)">
-            <mat-icon>delete</mat-icon>
-          </a>
+        <mat-card-actions class="actions-container">
+          <div class="right-actions">
+            <a (click)="editTask(taska)" href="javascript:void(0)">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a (click)="deleteTask(taska.id)" href="javascript:void(0)">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </div>
         </mat-card-actions>
       </mat-card>
     </div>
