@@ -34,7 +34,7 @@ export class BaseService<T> {
 
   // Create Resource
   create(item: any): Observable<T> {
-    return this.http.post<T>(this.resourcePath(), JSON.stringify(item), this.httpOptions)
+    return this.http.post<T>(this.basePath, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
@@ -46,13 +46,11 @@ export class BaseService<T> {
 
   // Update Resource
   update(id: any, item: any): Observable<T> {
-    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item), this.httpOptions)
+    return this.http.put<T>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
   // Get All Resources
-
-
   getAll(): Observable<T> {
     return this.http.get<T>(this.basePath, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
