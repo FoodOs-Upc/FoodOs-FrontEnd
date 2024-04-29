@@ -54,61 +54,68 @@
   "team": [
     {
       "id": 0,
-      "full_name": "Max Arroyo",
+      "full_name": "Alessandro Vega",
       "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
-      "description": "Soy pro-activo :D",
-      "rol": "trabajador"
+      "description": "Encargado del orden y designaciones de tareas",
+      "rol": "Jefe"
     },
     {
       "id": 1,
       "full_name": "Max Arroyo",
-      "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
-      "description": "Soy pro-activo :D",
-      "rol": "trabajador"
-    },
-    {
-      "id": 2,
-      "full_name": "Max Arroyo",
-      "photo": "https://i.postimg.cc/ZqtSFsHg/Perfil.jpg",
-      "description": "Soy pro-activo :D",
-      "rol": "trabajador"
-    },
-    {
-      "full_name": "Max Arroyo",
       "photo": "https://i.postimg.cc/mrNJ69Ls/Max-perfil.jpg",
-      "description": "Funcional pro",
+      "description": "Encargado de administrar inventario",
+      "rol": "Sub-Gerente"
+    },
+    {
+      "photo": "https://i.postimg.cc/CLkSmKQs/Lopez-Perfil.png",
+      "full_name": "Jose Lopez",
+      "description": "Encargado de Procesamiento de datos",
+      "rol": "Desarrollador",
+      "id": 2
+    },
+    {
+      "photo": "https://i.postimg.cc/Jz8mgLwV/Mario-Perfil.png",
+      "full_name": "Mario Aranda",
+      "description": "Encargado de recibir cargamento de productos",
       "rol": "Trabajador",
       "id": 3
+    },
+    {
+      "description": "Encargado en preparación de envió de pedidos",
+      "full_name": "Nicolas Haro ",
+      "photo": "https://i.postimg.cc/JzQmC2my/Nicolas-Perfil.png",
+      "rol": "Organizador de pedidos",
+      "id": 4
+    },
+    {
+      "photo": "https://i.postimg.cc/05L9YScN/Gustavo-Perfil.jpg",
+      "full_name": "Gustavo Siancas",
+      "description": "Encargado de Actualización de datos dentro del inventario",
+      "rol": "Trabajador",
+      "id": 5
     }
   ],
   "task": [
     {
       "id": 0,
-      "title": "Crear",
-      "description": "as",
+      "title": "Ordenar Ingreso de alimentos",
+      "description": "Ordenar los productos nuevos",
       "date": "2024-04-17T05:00:00.000Z",
       "memberAsignado": "Alessandro Vega"
     },
     {
       "id": 1,
-      "title": "Editar",
-      "description": "as",
+      "title": "Actualizar inventario",
+      "description": "Ingresar los productos dentro del inventario",
       "date": "2024-04-17T05:00:00.000Z",
-      "memberAsignado": "Alessandro Vega"
+      "memberAsignado": "Max Arroyo"
     },
     {
-      "title": "Eliminar",
-      "description": "Eliminar",
+      "title": "Eliminar Productos Vencidos",
+      "description": "Desechar los productos que hallan caducado",
       "memberAsignado": "Nicolas Haro",
       "date": "2024-04-17T05:00:00.000Z",
       "id": 2
-    },
-    {
-      "date": "2024-04-08T05:00:00.000Z",
-      "memberAsignado": "Nicolas Haro",
-      "description": "Elimianr",
-      "title": "Eliminar",
-      "id": 3
     }
   ]
 }

@@ -7,9 +7,10 @@
   justify-content: center;
   align-items: center;
   background-color: #66A18A;
+  height: 280px;
   width: 80%;
   margin: 0 auto; /* Centra horizontalmente */
-  margin-top: 50px;
+  margin-top: 10px;
   padding-top: 10px;
 }
 .container {
@@ -17,6 +18,7 @@
   justify-content: center;
   align-items: center;
   background-color: #66A18A;
+  height: 280px;
   width: 80%;
   margin: 0 auto; /* Centra horizontalmente */
   margin-top: 50px;
@@ -24,7 +26,7 @@
 
 }
 
-.card-container {
+.card-containerMember {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -34,13 +36,31 @@
   gap: 10px;
   flex-direction: row;
   justify-content: left;
-  align-items: center;
-  height: 50vh;
+  height: auto ;
   width: 95%;
-  margin-top: -50px;
+  margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: -10px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+.card-containerTask {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: auto;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-rows: repeat(auto-fill,minmax(200px,1fr));
+  gap: 10px;
+  flex-direction: row;
+  justify-content: left;
+  height: auto ;
+  width: 95%;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .containerForm{
@@ -48,7 +68,7 @@
   align-items: center;
   width: 80%;
   margin: 0 auto; /* Centra horizontalmente */
-  margin-top: 50px;
+  margin-top: 10px;
   padding-top: 10px;
 
 }
@@ -57,7 +77,7 @@
   align-items: center;
   width: 80%;
   margin: 0 auto; /* Centra horizontalmente */
-  margin-top: 50px;
+  margin-top: 10px;
   padding-top: 10px;
 
 }
@@ -75,9 +95,9 @@
   font-size: 24px; /* Tamaño del texto del mensaje 'Este es tu equipo!' */
   justify-content: left; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
-  height: 50%; /* Ajusta el alto para centrar verticalmente */
-  margin-top: 30px;
-  margin-left: 50px;
+  height: 20%; /* Ajusta el alto para centrar verticalmente */
+  margin-top: 20px;
+  margin-left: 20px;
   margin-bottom: -50px; /* Ajusta el margen inferior */
 }
 
