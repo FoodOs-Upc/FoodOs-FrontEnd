@@ -1,0 +1,16 @@
+.product-table {
+  background-color: #66A18A; /* Set table background color */
+}
+
+.product-table mat-form-field {
+  background-color: white; /* White background for search bar */
+}
+
+.product-table mat-header-row,
+.product-table mat-row {
+  background-color: white; /* White background for columns */
+}
+
+.product-table mat-icon-button {
+  background-color: white; /* White background for buttons */
+}

@@ -1,0 +1,77 @@
+.content-login{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+
+}
+.content-form-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: center;
+  background-color: #66A18A;
+  border-radius: 1.778vh;
+  width: 70vh;
+  height: 70vh;
+
+
+  >div{
+    padding: 30px;
+    >h1{
+      color: #EBB755;
+    }
+
+
+  }
+  >form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+
+
+    > button {
+      width: 100px; /* Ancho del botón */
+      height: 40px; /* Alto del botón */
+
+      background-color: #EBB755;
+
+
+
+    }
+
+  }
+  .route-register{
+    display: flex;
+
+
+    align-content: center;
+    justify-content: center;
+    >p{
+      margin-top: 10vh;
+    }
+  }
+
+  .login-title{
+    font-family: Nunito, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #EBB755;
+    align-content: center;
+    margin-bottom: 20px;
+  }
+
+  .login-button{
+    font-family: Nunito, sans-serif;
+    color: #EBB755;
+    align-content: center;
+    margin-bottom: 5px;
+  }
+
+  .foodos-logo{
+    width: 20vh;
+    height: 22vh;
+  }
+}

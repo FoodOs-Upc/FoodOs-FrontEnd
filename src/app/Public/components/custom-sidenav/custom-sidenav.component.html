@@ -1,0 +1,32 @@
+<div class="sidenav-header" >
+  <div class="sidenav-content">
+
+  <img [src]="'data:image/png;base64,' + getProfile().photo" alt="profile-image"/>
+  <div class="header-text"  >
+    <h2>{{getProfile().name}}</h2>
+  </div>
+
+  <mat-nav-list>
+    <div class="header-top">
+      @for (item of menuItems();track item){
+        @if(item.label!="Exit"){
+          <a mat-list-item (click)="changeRouter(item.route)" >
+            <mat-icon matListItemIcon >{{item.icon}}</mat-icon>
+            <span matListItemTitle  >{{item.label}}</span>
+          </a>
+        } }
+      <div class="header-bottom">
+        <a mat-list-item (click)="changeRouter('login')" >
+          <mat-icon matListItemIcon >exit_to_app</mat-icon>
+          <span matListItemTitle  >Exit</span>
+        </a>
+      </div>
+    </div>
+
+  </mat-nav-list>
+  </div>
+</div>
+
+<style>
+  @import './custom-sidenav.component.css';
+</style>

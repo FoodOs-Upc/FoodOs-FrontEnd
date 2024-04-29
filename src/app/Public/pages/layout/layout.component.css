@@ -1,0 +1,24 @@
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header{
+  background-color: #72B4EF;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+header span{
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+mat-sidenav-container{
+  height: 100vh;
+}
+
+.content{
+  padding: 24px;
+}

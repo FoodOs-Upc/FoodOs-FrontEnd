@@ -1,0 +1,24 @@
+<div class="content-login">
+  <div class="content-form-login">
+    <div>
+      <img src="assets/images/FoodOSLogo.png" alt="FoodOS Logo" class="foodos-logo">
+    </div>
+
+    <form [formGroup]="LoginForm" (ngSubmit)="onLogin()" autocomplete="off">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" placeholder="password">
+      </mat-form-field>
+      <button mat-button mat-flat-button type="submit"><h3 class="login-button"><a routerLink="/inventory">Login</a></h3></button>
+    </form>
+    <div class="route-register" >
+      <p class="iten 1">Do not have an account? \ <a routerLink="/auth/signUp">Sign up</a></p>
+    </div>
+  </div>
+
+</div>
+

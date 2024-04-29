@@ -1,0 +1,67 @@
+<div class="product-table">
+  <mat-form-field>
+    <input matInput #searchInput (keyup)="filterProducts(searchInput.value)" placeholder="Search by name">
+  </mat-form-field>
+
+  <table [dataSource]="dataSource" mat-table matSort>
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let product">
+        <span (click)="onProductSelected(product)">{{product.name}}</span>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+      <mat-header-cell *matHeaderCellDef> Stock </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.stock}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="manufacturingDate">
+      <mat-header-cell *matHeaderCellDef> Manufacturing Date </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.manufacturingDate | date:'mediumDate'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="dueDate">
+      <mat-header-cell *matHeaderCellDef> Due Date </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.dueDate | date:'mediumDate'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="provider">
+      <mat-header-cell *matHeaderCellDef> Provider </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.provider?.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="label">
+      <mat-header-cell *matHeaderCellDef> Label </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.label}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="state">
+      <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.state}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let product">
+        <button mat-icon-button (click)="viewProductDetails(product)">
+          <mat-icon>info</mat-icon>
+        </button>
+        <button mat-icon-button (click)="editProduct(product)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onAddProduct(product)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </table>
+</div>

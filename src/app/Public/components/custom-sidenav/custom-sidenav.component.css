@@ -1,0 +1,82 @@
+.sidenav-container {
+  position: fixed;
+  left: 0; /* Ensures it's positioned on the left side */
+  top: 0;
+  height: 100vh;
+  width: 6.25%; /* Adjust width as needed */
+  background-color: #66A18A;
+  transition: transform 0.3s ease-in-out;
+  /* Remove the default hidden state transform */
+}
+
+.sidenav-container.active {
+  transform: translateX(0); /* Show the sidebar when active */
+}
+
+.sidenav-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #66A18A; /* Example header background color */
+  color: black;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.sidenav-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 8px; /* Add space between image and username */
+}
+
+.header-text {
+  /* Remove flex-grow and padding (if not already done) */
+}
+
+.header-text h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sidenav-content {
+  flex: 1; /* Allow navigation content to fill available space */
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+  padding: 0; /* Remove default padding */
+}
+
+.mat-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mat-nav-list a {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px; /* Adjust padding as needed */
+  text-decoration: none;
+  color: white;
+}
+
+.mat-nav-list a:hover {
+  background-color: #3e8e41; /* Example hover background color */
+}
+
+.mat-nav-list mat-icon {
+  margin-right: 16px;
+}
+
+.inventory-page {
+  display: grid;
+  grid-template-columns: 6.25% 1fr; /* Allocate 6.25% to sidebar, 1fr for remaining content */
+  grid-gap: 0; /* Remove gaps between grid items */
+  height: 100vh;
+}
+
+/* Media Query for Smaller Screens (optional) */
+@media (max-width: 768px) {
+  .sidenav-container {
+    /* Adjust styles for smaller screens as needed */
+  }
+}

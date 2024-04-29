@@ -1,0 +1,11 @@
+<div class="inventory-page">
+
+  <app-custom-sidenav #customSidenav></app-custom-sidenav>
+
+  <h1 class="inventory-title">Inventory</h1>
+
+  <app-product-table [products]="inventoryData" (selectedProduct)="onProductSelected($event)"></app-product-table>
+
+  <button mat-raised-button (click)="openAddProductModal()">Add Product</button>
+</div>
+
