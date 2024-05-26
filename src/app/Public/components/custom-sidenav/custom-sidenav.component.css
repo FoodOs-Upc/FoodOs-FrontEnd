@@ -6,6 +6,9 @@
   height: 100vh;
   max-height: 100vh;
 
+
+
+
   > img {
     margin-top:24px ;
     border-radius: 100%;
@@ -43,6 +46,7 @@ mat-icon {
 .header-bottom{
 
 }
-.heafdasf{
-
+.botton-profile:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }

@@ -59,4 +59,8 @@ export class CustomSidenavComponent {
     return this.userService.currentProfile();
   }
 
+  changeToProfile():void{
+    this.router.navigate([`profile/:name`])
+  }
+
 }
