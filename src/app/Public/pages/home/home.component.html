@@ -1,0 +1,66 @@
+<section class="section-home">
+  <div class="title">
+    <h1>Home</h1>
+  </div>
+  <div class="home">
+    <div class="home-col1">
+
+      <div class="provider">
+        <h2>Providers</h2>
+        <div style="display: grid; overflow: auto; grid-template-columns: repeat(3, 1fr);  height: 10rem;"  >
+          @for (provider of provider;track provider){
+            <div class="card1">
+              <div>
+                <img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/7396100117907/star-guardian-kaisa-icon.png">
+                <h3>{{provider}}</h3>
+              </div>
+            </div>
+
+          }
+
+        </div>
+      </div>
+
+      <div class="report">
+        <h2>Reports</h2>
+        <div style="display: grid; overflow: auto; grid-template-columns: repeat(3, 1fr); height: 10rem"  >
+          @for (file of reports;track file){
+            <div class="card1">
+              <div>
+                <img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/7396100117907/star-guardian-kaisa-icon.png">
+                <h3>{{file}}</h3>
+              </div>
+            </div>
+
+          }
+
+        </div>
+      </div>
+
+    </div>
+    <div class="home-col2">
+
+      <div class="productExpire">
+        <h2>Products to Expire</h2>
+        <div style="display: grid; overflow: auto; grid-template-columns: repeat(2, 1fr);  height: 25rem " >
+          @for (product of products; track product){
+            <div class="card1">
+              <div>
+                <img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/7396100117907/star-guardian-kaisa-icon.png">
+                <h3>{{product}}</h3>
+              </div>
+            </div>
+
+          }
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+</section>
+
