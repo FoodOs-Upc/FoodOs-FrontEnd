@@ -5,25 +5,63 @@
   <div class="profile-form">
 
     <div class="card">
-      <div>
-        <h2>FirstName</h2>
-        <h2>LastName</h2>
-        <h2>Email</h2>
-        <h2>Password</h2>
-        <h2>Rol</h2>
-      </div>
+      <form [formGroup]="profileForm" (ngSubmit)="onProfile()" autocomplete="off" >
+        <div style="display: flex; flex-direction: column;">
+
+          <mat-form-field>
+            <mat-label>FirstName</mat-label>
+            <input type="text" matInput formControlName = "firstname" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>LastName</mat-label>
+            <input type="text" matInput formControlName="lastname" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Rol</mat-label>
+            <input type="text" matInput formControlName="rol" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="text" matInput formControlName="email" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="text" matInput formControlName="password" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Membership</mat-label>
+            <input type="text" matInput formControlName="membership" >
+          </mat-form-field>
+
+        </div>
+        <div class="card-footer">
+          <button mat-button mat-flat-button type="submit">Update</button>
+        </div>
+      </form>
 
       <div class="card-footer">
-        <button mat-button mat-flat-button type="submit">Submit</button>
-        <button mat-button mat-flat-button type="submit">Update</button>
+        <button mat-button mat-flat-button type="submit">Delete</button>
       </div>
-
     </div>
 
 
   </div>
   <div class="profile-img">
-    <img src="assets/star-guardian-quinn-icon.png">
-    <input type="file" accept="image/*">
+
+    @if(imagePreview){
+      <img [src]="imagePreview">
+
+
+    } @else {
+      <img [src]="'data:image/png;base64,' + profile.photo">
+
+    }
+
+    <input (change)="ChapterFile($event)" type="file" accept=".png, .jpg, .jpeg">
   </div>
 </div>

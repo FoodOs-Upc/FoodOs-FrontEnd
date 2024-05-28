@@ -1,22 +1,18 @@
 export class Profile {
   id: number;
-  name: string;
+  firstName: string;
   lastName: string;
-  addresCity: string;
-  addresCountry: string;
-  companyName: string;
   photo: string;
   rol: string;
   membership: string;
-  constructor() {
-    this.id=0;
-    this.name="";
-    this.lastName="";
-    this.addresCity="";
-    this.addresCountry="";
-    this.companyName="";
-    this.photo="";
-    this.rol="";
-    this.membership="";
+
+  constructor(id:number,firstName:string,lastName:string,photo:string,rol:string,membership:string){
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.photo = photo;
+    this.rol = rol;
+    this.membership = membership;
   }
+
 }
