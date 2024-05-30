@@ -7,6 +7,7 @@ import {MatButton} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
+import {MatOption, MatSelect} from "@angular/material/select";
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import {MatInput} from "@angular/material/input";
     MatFormField,
     MatInput,
     MatButton,
-    MatLabel
+    MatLabel,
+    MatSelect,
+    MatOption
   ]
 })
 export class ProfileModule { }

@@ -26,7 +26,7 @@ export class CustomSidenavComponent {
     {
       icon: "inventory_2",
       label: "Inventory",
-      route: "notification"
+      route: "inventory"
     },
     {
       icon: "diversity_3",

@@ -1,0 +1,103 @@
+import {AfterViewInit, Component, input, Input, OnInit, ViewChild} from '@angular/core';
+import {MatTableDataSource} from "@angular/material/table";
+import {Product} from "../../model/product.entity";
+import {InventoryService} from "../../service/inventory.service";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
+import {MatDialog} from "@angular/material/dialog";
+import {FormAddProductComponent} from "../../components/form-add-product/form-add-product.component";
+import {Inventory} from "../../model/inventory.entity";
+
+@Component({
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrl: './products.component.css'
+})
+export class ProductsComponent implements OnInit, AfterViewInit{
+
+  inventory:Inventory;
+
+  productData:Product;
+  dataSource:MatTableDataSource<Product>;
+  displayedColumns:string[]=["id","image","name","expirationDate","productionDate","state","provider","options"];
+
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: false}) sort!: MatSort;
+
+  isEditMode: boolean;
+
+
+  constructor(private dialog:MatDialog,private inventoryService:InventoryService) {
+    this.productData ={} as Product;
+    this.dataSource= new MatTableDataSource<Product>([]);
+    this.isEditMode =false;
+    this.inventory={} as Inventory;
+  }
+
+  private resetEditState() {
+    this.isEditMode = false;
+    this.productData ={} as Product;
+  }
+
+
+  private getAllProducts():void{
+    this.inventoryService.getById(0).subscribe((response  )=>{
+        this.dataSource.data = response.products;
+
+      });
+
+  }
+  /*Funcion Añadir un Producto*/
+  onAddProduct():void{
+
+    this.isEditMode= false;
+
+    const dialog= this.dialog.open(FormAddProductComponent,{
+      data:{product: this.productData,mode: this.isEditMode}
+    });
+
+    this.resetEditState();
+
+
+  }
+  /*Funcion Editar un Producto*/
+  onEditProduct(element:Product){
+    this.productData = element;
+
+    this.isEditMode= true;
+
+    const dialog= this.dialog.open(FormAddProductComponent,{
+      data:{product: this.productData,mode: this.isEditMode}
+    });
+
+    dialog.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result.newProduct);
+
+      this.inventory.products.push(result.newProduct)
+
+      this.inventoryService.update(this.inventory.id,this.inventory).subscribe(response=>{
+
+      })
+
+    });
+
+    this.resetEditState();
+  }
+
+  onUpdate(){
+
+
+
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  ngOnInit(): void {
+    this.getAllProducts();
+  }
+
+}

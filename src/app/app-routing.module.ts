@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren:() =>import("./Profile/profile.module").then(m=>m.ProfileModule)
   },
   {
+    path:'inventory',
+    loadChildren:()=> import("./Inventory/inventory.module").then(m=>m.InventoryModule)
+
+  },
+  {
     path:'',
     component:LayoutComponent,
     children:[{path:'home',component: HomeComponent}]
