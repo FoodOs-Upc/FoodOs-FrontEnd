@@ -20,7 +20,10 @@
 
           <mat-form-field>
             <mat-label>Rol</mat-label>
-            <input type="text" matInput formControlName="rol" >
+            <mat-select formControlName="rol">
+              <mat-option value="ROLE_RESTAURANT">Restaurant</mat-option>
+              <mat-option value="ROLE_PROVIDER">Provider</mat-option>
+            </mat-select>
           </mat-form-field>
 
           <mat-form-field>
@@ -30,12 +33,16 @@
 
           <mat-form-field>
             <mat-label>Password</mat-label>
-            <input type="text" matInput formControlName="password" >
+            <input matInput [type]="'password'" type="text" formControlName="password" >
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field >
             <mat-label>Membership</mat-label>
-            <input type="text" matInput formControlName="membership" >
+            <mat-select formControlName="membership">
+              <mat-option value="PLAN_1">Free</mat-option>
+              <mat-option value="PLAN_2">Plan 1</mat-option>
+              <mat-option value="PLAN_3">Plan 2</mat-option>
+            </mat-select>
           </mat-form-field>
 
         </div>

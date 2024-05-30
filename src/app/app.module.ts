@@ -14,6 +14,7 @@ import {MatSidenav, MatSidenavContainer, MatSidenavModule} from "@angular/materi
 import {MatIcon} from "@angular/material/icon";
 import { ProfileComponent } from './Profile/pages/profile/profile.component';
 import { HomeComponent } from './Public/pages/home/home.component';
+import {InventoryModule} from "./Inventory/inventory.module";
 
 
 @NgModule({

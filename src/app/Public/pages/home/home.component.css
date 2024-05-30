@@ -1,17 +1,11 @@
 .section-home{
   padding: 8px;
 }
-.title{
-
-}
 .home{
   padding: 8px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
   margin: 10px;
-
-
   gap: 15px;
 }
 .provider{
@@ -19,9 +13,6 @@
   border-radius: 16px;
   padding: 8px;
   height: 13rem;
-
-
-
 }
 .report{
   margin-top: 15px;
@@ -35,24 +26,46 @@
   border-radius: 16px;
   padding: 8px;
   height: 30rem;
-
-
-
 }
 .home-col1{
   gap: 15px;
-
 }
 
 .card1{
   display:flex;
   justify-content: space-between;
+  height: 95px;
 
   border-radius:16px;
 
   padding:5px;
   background-color: white;
   margin: 10px;
+
+
+  >div{
+    display:flex;
+  }
+
+  >div>img{
+    height:51px;
+    width:51px;
+    border-radius:50%;
+    margin-right: 10px;
+  }
+}
+
+.card{
+  display:flex;
+  justify-content: space-between;
+  height: 50px;
+
+  border-radius:16px;
+
+  padding:5px;
+  background-color: white;
+  margin: 10px;
+
 
   >div{
     display:flex;
