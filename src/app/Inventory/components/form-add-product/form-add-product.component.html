@@ -1,0 +1,70 @@
+<div style="padding: 25px;">
+  @if (editMode){
+    <h2>Update Product</h2>
+  } @else {
+    <h2>Add Product</h2>
+  }
+  <div class="product-date">
+    <div class="product-form">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()" autocomplete="off" >
+        <div style="display: flex; flex-direction: column;">
+          <mat-form-field  aria-disabled="true">
+            <mat-label>Id</mat-label>
+            <input matInput type="text" formControlName = "id" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName = "name" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>expiration Date</mat-label>
+            <input type="date" matInput formControlName = "expirationDate" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>production Date</mat-label>
+            <input type="date" matInput formControlName = "productionDate" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>state</mat-label>
+            <mat-select formControlName = "state">
+              <mat-option value="GOOD">Good</mat-option>
+              <mat-option value="MEDIUM">Medium</mat-option>
+              <mat-option value="BAD">Bad</mat-option>
+            </mat-select>
+
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>provider</mat-label>
+            <mat-select formControlName = "provider">
+              @for (provider of providers;track provider.id){
+                <mat-option [value]="provider.id" >{{provider.name}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+        <div>
+          <button mat-button mat-flat-button type="submit" [mat-dialog-close]="data.product">Add</button>
+        </div>
+      </form>
+
+    </div>
+    <div class="product-img">
+      @if(imagePreview){
+        <img [src]="imagePreview">
+      } @else {
+        <img [src]="'data:image/png;base64,' + product.image">
+      }
+      <input (change)="ChapterFile($event)" type="file" accept=".png, .jpg, .jpeg">
+    </div>
+  </div>
+
+
+
+
+</div>

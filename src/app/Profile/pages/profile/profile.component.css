@@ -1,0 +1,50 @@
+.title{
+  display: flex;
+  justify-content: start;
+  padding: 8px;
+}
+.profile-date{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 8px;
+}
+.profile-form{
+  padding: 10px;
+}
+.profile-img{
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  > input{
+    padding-top: 10px;
+  }
+}
+.profile-img img{
+  border-radius: 50%;
+  width: 300px;
+  height: auto;
+
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: #F1F8F5;
+  border-radius: 16px;
+  padding: 10px;
+  height: 95%;
+}
+.card-footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  > button{
+    margin: 10px;
+    background-color: #EBB755;
+  }
+}
+

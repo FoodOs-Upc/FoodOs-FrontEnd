@@ -26,7 +26,7 @@ export class CustomSidenavComponent {
     {
       icon: "inventory_2",
       label: "Inventory",
-      route: "notification"
+      route: "inventory"
     },
     {
       icon: "diversity_3",
@@ -57,6 +57,10 @@ export class CustomSidenavComponent {
 
   getProfile():Profile{
     return this.userService.currentProfile();
+  }
+
+  changeToProfile():void{
+    this.router.navigate([`profile/:name`])
   }
 
 }

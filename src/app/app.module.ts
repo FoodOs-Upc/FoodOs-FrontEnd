@@ -16,13 +16,17 @@ import {TeamComponent} from "./Public/pages/team/team.component";
 import {CommonModule, DatePipe} from "@angular/common";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import { ProfileComponent } from './Profile/pages/profile/profile.component';
+import { HomeComponent } from './Public/pages/home/home.component';
+import {InventoryModule} from "./Inventory/inventory.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomSidenavComponent,
-    LayoutComponent
+    LayoutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
