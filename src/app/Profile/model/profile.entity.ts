@@ -1,5 +1,6 @@
 export class Profile {
-  id: number;
+
+  /*id: number;
   firstName: string;
   lastName: string;
   photo: string;
@@ -13,6 +14,20 @@ export class Profile {
     this.photo = photo;
     this.rol = rol;
     this.membership = membership;
+  }*/
+
+  id: number;
+  imageProfile: string;
+  lastName: string
+  firstName: string
+  emailAddress: string;
+
+  constructor(id:number,imageProfile:string,lastName:string,firstName:string,emailAdress:string) {
+    this.id =id;
+    this.imageProfile = imageProfile;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.emailAddress= emailAdress;
   }
 
 }

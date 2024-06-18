@@ -1,12 +1,12 @@
 <div class="sidenav-header" >
   <img
-    [src]="'data:image/png;base64,' + getProfile().photo"
+    [src]="'data:image/png;base64,' + profile.imageProfile"
     (click)="changeToProfile()"
     class="botton-profile"
   />
 
   <div class="header-text"  >
-    <h2>{{getProfile().firstName}}</h2>
+    <h2>{{profile.firstName}}</h2>
 
   </div>
 

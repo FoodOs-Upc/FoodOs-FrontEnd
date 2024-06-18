@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "./Auth/service/user.service";
+import {TokenStorageService} from "./Auth/service/tokenStorageService.service";
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,17 @@ import {UserService} from "./Auth/service/user.service";
 })
 export class AppComponent implements OnInit{
   title = 'FoodOs-FrontEnd';
-  constructor(private userService:UserService) {
+
+  isLoggedIn = false;
+
+  constructor(private userService:UserService,private tokenStorageService: TokenStorageService) {
   }
   ngOnInit(){
-    this.userService.checkStatus().subscribe(()=>{
-      console.log("Chequeando Usuario")
-    })
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+
+
+
   }
-}
+}}

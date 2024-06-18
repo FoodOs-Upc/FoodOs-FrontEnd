@@ -4,6 +4,7 @@ import {LayoutComponent} from "./Public/pages/layout/layout.component";
 import {ProfileComponent} from "./Profile/pages/profile/profile.component";
 import {HomeComponent} from "./Public/pages/home/home.component";
 
+
 const routes: Routes = [
   {
     path: 'auth',
@@ -11,17 +12,20 @@ const routes: Routes = [
   },
   {
     path:'profile',
+
     loadChildren:() =>import("./Profile/profile.module").then(m=>m.ProfileModule)
   },
   {
     path:'inventory',
+
     loadChildren:()=> import("./Inventory/inventory.module").then(m=>m.InventoryModule)
 
   },
   {
     path:'',
     component:LayoutComponent,
-    children:[{path:'home',component: HomeComponent}]
+
+    children:[{path:'home',component: HomeComponent}],
   },
   {
     path: '',

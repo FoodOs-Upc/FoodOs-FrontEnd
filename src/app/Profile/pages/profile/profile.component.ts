@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProfileService} from "../../service/profile.service";
 import {Profile} from "../../model/profile.entity";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {TokenStorageService} from "../../../Auth/service/tokenStorageService.service";
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,10 @@ export class ProfileComponent implements OnInit {
 
   private formData = new FormData();
 
-  constructor(private profileService: ProfileService,private formBuilder:FormBuilder) {
+  constructor(
+    private profileService: ProfileService,
+    private formBuilder:FormBuilder,
+    private tokenStorageService:TokenStorageService) {
     this.profile = {} as Profile;
     this.profileForm = this.formBuilder.group({
       firstname: ['', Validators.required],
@@ -30,11 +34,14 @@ export class ProfileComponent implements OnInit {
 
   initializeForm(): void {
     this.profileForm.patchValue({
+
       firstname: this.profile.firstName,
       lastname: this.profile.lastName,
-      rol: this.profile.rol,
-      membership: this.profile.membership,
+      /*rol: this.profile.rol,
+      membership: this.profile.membership,*/
+      email: this.profile.emailAddress
     });
+
 
   }
 
@@ -49,7 +56,7 @@ export class ProfileComponent implements OnInit {
   }
 
   onProfile():void{
-    if(this.profileForm.invalid)return;
+    if(this.profileForm.invalid)return;/*
     let updateProfile:Profile = new Profile(
       this.profile.id,
       this.profileForm.controls['firstname'].value,
@@ -57,7 +64,9 @@ export class ProfileComponent implements OnInit {
       this.profile.photo,
       this.profileForm.controls['rol'].value,
       this.profileForm.controls['membership'].value,
-    )
+    )*/
+
+    let updateProfile:Profile = {}as Profile;
     this.profileService.update(this.profile.id,updateProfile).subscribe(response=>{
 
     })
@@ -68,7 +77,7 @@ export class ProfileComponent implements OnInit {
     const  file = event.target.files[0];
     if(file){
       //Añadir a form data
-      this.profile.photo = file;
+      this.profile.imageProfile = file;
       console.log("Captura Image")
       console.log(file)
 
@@ -89,7 +98,8 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProfile(0);
+    const id:number =Number(this.tokenStorageService.getUser())
+    this.getProfile(id);
   }
 
 
