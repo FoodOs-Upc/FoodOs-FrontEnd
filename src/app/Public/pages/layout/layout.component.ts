@@ -8,12 +8,9 @@ import {Profile} from "../../../Profile/model/profile.entity";
   styleUrl: './layout.component.css'
 })
 export class LayoutComponent {
-  constructor(private userService:UserService) {
+  constructor() {
   }
 
-  getProfile():Profile{
-    return this.userService.currentProfile()
 
-  }
 
 }

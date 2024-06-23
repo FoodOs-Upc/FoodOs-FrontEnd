@@ -29,9 +29,9 @@ export class RegisterComponent {
     rol: ['',{validators:[Validators.required]}]
   })
   onRegister():void{
-    if(this.registerForm.invalid)return;
+    if(this.registerForm.invalid)return;/*
     this.user.email= this.registerForm.controls['email'].value
-    this.user.password = this.registerForm.controls['password'].value
+    this.user.password = this.registerForm.controls['password'].value*/
 
 
     this.userService.signUp(this.user)
