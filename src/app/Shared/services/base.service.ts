@@ -7,7 +7,7 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class BaseService<T> {
-  basePath: string = `${environment.serverBasePath}`;
+  basePath: string = `http://localhost:8080/api/v1/`;
   resourceEndpoint: string = '/resources';
 
   httpOptions = {
@@ -62,6 +62,6 @@ export class BaseService<T> {
 
 
   protected resourcePath(): string {
-    return `${this.basePath}${this.resourceEndpoint}`;
+    return `${this.basePath}`;
   }
 }

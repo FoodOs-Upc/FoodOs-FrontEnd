@@ -1,7 +1,7 @@
 export interface TeamEntity {
   id: number;
-  full_name: string;
-  photo: string;
+  name: string;
+  profilePicture: string;
   description: string;
   rol: string;
 

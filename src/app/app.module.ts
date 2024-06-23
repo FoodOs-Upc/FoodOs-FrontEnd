@@ -21,12 +21,13 @@ import { HomeComponent } from './Public/pages/home/home.component';
 import {InventoryModule} from "./Inventory/inventory.module";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CustomSidenavComponent,
     LayoutComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

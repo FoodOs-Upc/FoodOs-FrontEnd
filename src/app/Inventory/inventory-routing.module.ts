@@ -11,9 +11,7 @@ const routes: Routes = [
       {path:'',component: ProductsComponent},
       {path:'**',redirectTo:'home'}
     ]
-
   }
-
 ];
 
 @NgModule({
