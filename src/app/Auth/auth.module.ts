@@ -9,6 +9,8 @@ import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import { LayoutComponent } from './pages/layout/layout.component';
 import { RegisterComponent } from './pages/register/register.component';
+import {MatOption} from "@angular/material/autocomplete";
+import {MatSelect} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -16,15 +18,17 @@ import { RegisterComponent } from './pages/register/register.component';
     LayoutComponent,
     RegisterComponent
   ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    ReactiveFormsModule,
-    MatFormField,
-    MatInput,
-    MatButton,
-    MatLabel
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        ReactiveFormsModule,
+        MatFormField,
+        MatInput,
+        MatButton,
+        MatLabel,
+        MatOption,
+        MatSelect
 
-  ]
+    ]
 })
 export class AuthModule { }

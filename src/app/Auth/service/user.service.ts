@@ -8,6 +8,7 @@ import {toNumbers} from "@angular/compiler-cli/src/version_helpers";
 import {Profile} from "../../Profile/model/profile.entity";
 import {resolve} from "@angular/compiler-cli";
 import {LoginUser} from "../model/loginUser.entity";
+import {RegisterUser} from "../model/registerUser.entity";
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +29,9 @@ export class UserService extends BaseService<User>{
 
   }
 
-  signUp(user:User):Observable<any>{
-    return this.http.post<User>(`${this.resourcePath()}/sign-up`,user,this.httpOptions)
+  signUp(user:FormData):Observable<any>{
+    console.log(user);
+    return this.http.post<any>(`${this.resourcePath()}/sign-up`,user,this.httpOptions)
 
   }
 

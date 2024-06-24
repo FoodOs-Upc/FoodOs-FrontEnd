@@ -4,7 +4,7 @@
     <div class="colum1">
 
       <mat-form-field>
-        <mat-label>Name</mat-label>
+        <mat-label>First Name</mat-label>
         <input type="text" matInput formControlName="name" >
       </mat-form-field>
 
@@ -31,32 +31,28 @@
     </div>
     <div class="colum2">
       <mat-form-field>
-        <mat-label>Name Company</mat-label>
-        <input type="text" matInput formControlName="lastName" >
+        <mat-label>UserName</mat-label>
+        <input type="text" matInput formControlName="username" >
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Rol</mat-label>
-        <input type="text" matInput formControlName="rol" >
+        <mat-select formControlName = "rol">
+          <mat-option value="ROLE_RESTAURANT">Restaurant</mat-option>
+          <mat-option value="ROLE_PROVIDER">Provider</mat-option>
+
+        </mat-select>
+
       </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>Country</mat-label>
-        <input type="text" matInput formControlName="country" >
-      </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>City</mat-label>
-        <input type="text" matInput formControlName="city" >
-      </mat-form-field>
+
 
       <button mat-button mat-flat-button type="submit"><h3>Sing Up</h3></button>
 
     </div>
-
-
-
-
-
   </form>
+
+  <input (change)="ChapterFile($event)" type="file" accept=".png, .jpg, .jpeg">
+
 </div>
