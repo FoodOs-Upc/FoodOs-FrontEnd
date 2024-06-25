@@ -87,6 +87,7 @@ export class FormAddProductComponent implements OnInit{
        this.formData.append('productionDate', this.newProduct.productionDate);
 
        this.dialogRef.close({newProduct:this.formData});
+       window.location.reload();
      }else{
 
        this.dialogRef.close({newProduct:this.product})

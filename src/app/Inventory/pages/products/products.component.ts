@@ -8,6 +8,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {FormAddProductComponent} from "../../components/form-add-product/form-add-product.component";
 import {Inventory} from "../../model/inventory.entity";
 import {TokenStorageService} from "../../../Auth/service/tokenStorageService.service";
+import {ProductService} from "../../service/product.service";
 
 @Component({
   selector: 'app-products',
@@ -28,7 +29,10 @@ export class ProductsComponent implements OnInit, AfterViewInit{
   isEditMode: boolean;
 
 
-  constructor(private dialog:MatDialog,private inventoryService:InventoryService,private tokenStorageService:TokenStorageService) {
+  constructor(private dialog:MatDialog,
+              private inventoryService:InventoryService,
+              private tokenStorageService:TokenStorageService,
+              private productService:ProductService) {
     this.productData ={} as Product;
     this.dataSource= new MatTableDataSource<Product>([]);
     this.isEditMode =false;
@@ -95,10 +99,11 @@ export class ProductsComponent implements OnInit, AfterViewInit{
     this.resetEditState();
   }
 
-  onUpdate(){
+  onDelete(idProduct:number){
+      this.productService.delete(idProduct).subscribe(response=>{
 
-
-
+      })
+    window.location.reload();
   }
 
   ngAfterViewInit(): void {
