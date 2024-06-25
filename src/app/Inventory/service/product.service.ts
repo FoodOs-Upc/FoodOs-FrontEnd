@@ -11,19 +11,13 @@ import {TokenStorageService} from "../../Auth/service/tokenStorageService.servic
 @Injectable({
   providedIn: 'root'
 })
-export class InventoryService extends BaseService<Inventory>{
+export class ProductService extends BaseService<Product>{
 
-  constructor(http:HttpClient,private tokenStorageService:TokenStorageService) {
+  constructor(http:HttpClient) {
     super(http);
-    this.resourceEndpoint = '/inventory'
+    this.resourceEndpoint = '/product'
   }
 
 
-  addProduct(product:any,idInventory:number):Observable<any>{
 
-    for (let pair of product.entries()) {
-      console.log(pair[0] + ', ' + pair[1]); // Muestra cada clave/valor
-    }
-    return this.http.post(`${this.resourcePath()}/${idInventory}/product`,product )
-  }
 }

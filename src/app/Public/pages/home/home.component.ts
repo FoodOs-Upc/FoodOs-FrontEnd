@@ -3,6 +3,7 @@ import {InventoryService} from "../../../Inventory/service/inventory.service";
 import {Product} from "../../../Inventory/model/product.entity";
 import {Provider} from "../../../Inventory/model/provider.entity";
 import {ProviderService} from "../../../Inventory/service/provider.service";
+import {TokenStorageService} from "../../../Auth/service/tokenStorageService.service";
 
 @Component({
   selector: 'app-home',
@@ -15,14 +16,14 @@ export class HomeComponent implements OnInit {
   provider:number[];
   date: Date;
 
-  constructor(private inventoryService: InventoryService, private providerService: ProviderService) {
+  constructor(private inventoryService: InventoryService, private providerService: ProviderService,private tokenStorageService:TokenStorageService) {
     this.reports=[];
     this.products=[];
     this.provider=[];
     this.date = new Date();
   }
   private getAllInventorie():void{
-    this.inventoryService.getById(0).subscribe(response =>{
+    this.inventoryService.getById(Number(this.tokenStorageService.getUser())).subscribe(response =>{
       console.log('fecha actual');
       console.log(this.date)
       console.log(response.products)

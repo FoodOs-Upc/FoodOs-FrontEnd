@@ -1,9 +1,9 @@
 import {Product} from "./product.entity";
+import {File} from "./file.entity";
 
 export interface Inventory {
   id: number
-  id_profile: number
   products: Product[]
-  id_group: number
-  files: any[]
+  files: File[]
+  idProfile: number
 }

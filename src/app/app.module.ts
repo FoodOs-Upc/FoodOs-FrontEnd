@@ -19,9 +19,11 @@ import {MatNativeDateModule} from "@angular/material/core";
 import { ProfileComponent } from './Profile/pages/profile/profile.component';
 import { HomeComponent } from './Public/pages/home/home.component';
 import {InventoryModule} from "./Inventory/inventory.module";
+import {authInterceptorProviders} from "./Auth/service/authInterceptor";
 
 
-@NgModule({
+
+    @NgModule({
   declarations: [
     AppComponent,
     CustomSidenavComponent,
@@ -48,7 +50,8 @@ import {InventoryModule} from "./Inventory/inventory.module";
   ],
   providers: [
     provideAnimationsAsync(),
-    DatePipe
+    DatePipe,
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

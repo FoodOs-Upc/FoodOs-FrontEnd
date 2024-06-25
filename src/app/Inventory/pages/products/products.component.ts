@@ -7,6 +7,8 @@ import {MatSort} from "@angular/material/sort";
 import {MatDialog} from "@angular/material/dialog";
 import {FormAddProductComponent} from "../../components/form-add-product/form-add-product.component";
 import {Inventory} from "../../model/inventory.entity";
+import {TokenStorageService} from "../../../Auth/service/tokenStorageService.service";
+import {ProductService} from "../../service/product.service";
 
 @Component({
   selector: 'app-products',
@@ -27,7 +29,10 @@ export class ProductsComponent implements OnInit, AfterViewInit{
   isEditMode: boolean;
 
 
-  constructor(private dialog:MatDialog,private inventoryService:InventoryService) {
+  constructor(private dialog:MatDialog,
+              private inventoryService:InventoryService,
+              private tokenStorageService:TokenStorageService,
+              private productService:ProductService) {
     this.productData ={} as Product;
     this.dataSource= new MatTableDataSource<Product>([]);
     this.isEditMode =false;
@@ -41,10 +46,12 @@ export class ProductsComponent implements OnInit, AfterViewInit{
 
 
   private getAllProducts():void{
-    this.inventoryService.getById(0).subscribe((response  )=>{
+    this.inventoryService.getById(Number(this.tokenStorageService.getUser())).subscribe((response  )=>{
         this.dataSource.data = response.products;
+        this.inventory.id = response.id;
 
       });
+    console.log(this.tokenStorageService.getToken())
 
   }
   /*Funcion Añadir un Producto*/
@@ -54,6 +61,13 @@ export class ProductsComponent implements OnInit, AfterViewInit{
 
     const dialog= this.dialog.open(FormAddProductComponent,{
       data:{product: this.productData,mode: this.isEditMode}
+    });
+    dialog.afterClosed().subscribe(result =>{
+      console.log("El form data para agregar")
+      console.log(result.newProduct);
+
+      this.inventoryService.addProduct(result.newProduct,this.inventory.id).subscribe(response =>{
+      })
     });
 
     this.resetEditState();
@@ -85,10 +99,11 @@ export class ProductsComponent implements OnInit, AfterViewInit{
     this.resetEditState();
   }
 
-  onUpdate(){
+  onDelete(idProduct:number){
+      this.productService.delete(idProduct).subscribe(response=>{
 
-
-
+      })
+    window.location.reload();
   }
 
   ngAfterViewInit(): void {

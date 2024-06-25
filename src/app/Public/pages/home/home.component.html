@@ -46,7 +46,7 @@
           @for (product of products; track product){
             <div class="card1">
               <div>
-                <img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/7396100117907/star-guardian-kaisa-icon.png">
+                <img [src]="'data:image/png;base64,' + product.file">
                 <div style="display: flex; flex-direction: column">
                   <h3>{{product.name}}</h3>
                   <div style="display: flex; flex-direction: column">

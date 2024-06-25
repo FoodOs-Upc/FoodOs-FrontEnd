@@ -13,11 +13,13 @@ import {Provider} from "../../model/provider.entity";
 export class FormAddProductComponent implements OnInit{
   //Attributes
   product: Product;
+  newProduct:Product;
   providers: Provider[];
   editMode: boolean = false;
   imagePreview: string | ArrayBuffer = '';
 
   productForm: FormGroup;
+  formData:FormData;
 
    constructor(private formBuilder: FormBuilder,
                private providerService: ProviderService,
@@ -25,11 +27,11 @@ export class FormAddProductComponent implements OnInit{
                @Inject(MAT_DIALOG_DATA) public data: any)  {
 
      this.product = data.product;
-
+     this.formData = new FormData();
      this.editMode=data.mode;
 
 
-
+      this.newProduct = {} as Product;
       this.providers = [];
 
      this.productForm = this.formBuilder.group({
@@ -38,7 +40,7 @@ export class FormAddProductComponent implements OnInit{
        expirationDate: ['', Validators.required],
        productionDate: ['', Validators.required],
        state: ['', Validators.required],
-       provider: ['', Validators.required],
+
      });
 
      this.initializeForm();
@@ -53,8 +55,7 @@ export class FormAddProductComponent implements OnInit{
        name: this.product.name,
        expirationDate: this.product.expirationDate,
        productionDate: this.product.productionDate,
-       state: this.product.state,
-       provider:this.product.id_provider
+
      })
    }
    private resetEditState(){
@@ -71,16 +72,43 @@ export class FormAddProductComponent implements OnInit{
    onSubmit():void {
      if(this.productForm.invalid)return;
 
+
      if(!this.editMode){
-       this.dialogRef.close({newProduct:this.product});
+       this.newProduct.name =this.productForm.controls['name'].value;
+       this.newProduct.productionDate =this.TransDate(this.productForm.controls['productionDate'].value).toISOString();
+
+       this.newProduct.expirationDate =this.TransDate(this.productForm.controls['expirationDate'].value).toISOString();
+
+       console.log(this.newProduct)
+
+
+       this.formData.append('name', this.newProduct.name);
+       this.formData.append('expirationDate', this.newProduct.expirationDate);
+       this.formData.append('productionDate', this.newProduct.productionDate);
+
+       this.dialogRef.close({newProduct:this.formData});
+       window.location.reload();
+     }else{
+
+       this.dialogRef.close({newProduct:this.product})
      }
 
    }
+   TransDate(date:string){
+     return new Date(date);
+}
+
   ChapterFile(event:any){
     const  file = event.target.files[0];
     if(file){
       //Añadir a form data
-      this.product.image = file;
+      if(!this.editMode){
+        this.newProduct.file =file;
+        this.formData.append('file', this.newProduct.file);
+      }else {
+        this.product.file = file;
+      }
+
       console.log("Captura Image")
       console.log(file)
 
