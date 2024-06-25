@@ -7,7 +7,7 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class BaseService<T> {
-  basePath: string = `https://foodos-backend.calmmoss-69d5f0b8.eastus.azurecontainerapps.io/api/v1`;
+  basePath: string = `https://despliegue.gentlebeach-9ad104d2.eastus2.azurecontainerapps.io/api/v1`;
   resourceEndpoint: string = '/resources';
 
   httpOptions = {
